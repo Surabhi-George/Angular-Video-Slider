@@ -1,0 +1,29 @@
+<section>
+    <div class="container">
+        <div class="an-space-between">
+            <h4>VIDEO SLIDER</h4>
+            <div *ngIf="video.length > 3">
+                <img (click)="leftClick()" src="https://image.flaticon.com/icons/svg/467/467136.svg" width="40" class="an-hover" alt="">
+                <img (click)="rightClick()" src="https://image.flaticon.com/icons/svg/467/467152.svg" width="40" class="an-hover" alt="">
+            </div>
+        </div>
+        <div>
+            <ul class="an-slider">
+                <li *ngFor="let data of video; let i = index;">
+                    <div class="an-image-thumb an-vh-center" (click)="openVideoClick(videopopup,data.video)" [style.backgroundImage]="'url('+ data.image +')'" >
+                        <img class="an-video-icn" src="https://i.ya-webdesign.com/images/play-icon-png-white-5.png" alt="" width="40">
+                        <p>{{data.data}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>    
+</section>
+
+<!-- video popup -->
+<ng-template #videopopup let-modal>
+    <div class="modal-body">
+        <img src="https://flaticons.net/icon.php?slug_category=mobile-application&slug_icon=close" class="close-icn" (click)="modal.dismiss('Cross click')">
+        <iframe width="610" height="480" [src]="('https://www.youtube.com/embed/' + activeVideoId) | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</ng-template>
