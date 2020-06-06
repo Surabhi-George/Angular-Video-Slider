@@ -1,8 +1,6 @@
-# Angular-Video-Slider
+# AngularVideoSlider
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
-
-![Image description](http://surabhigeorge.com/git_images/video-slider-image.png)
 
 ## Development server
 
